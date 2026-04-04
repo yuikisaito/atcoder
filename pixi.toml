@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Yuiki Saito <yuikisaito@ysaito.win>"]
+channels = ["conda-forge"]
+name = "atcoder"
+platforms = ["osx-arm64", "linux-aarch64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+nushell = ">=0.111.0,<0.112"
