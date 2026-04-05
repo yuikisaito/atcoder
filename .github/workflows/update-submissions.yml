@@ -20,11 +20,6 @@ jobs:
       - name: Setup Pixi
         uses: prefix-dev/setup-pixi@v0.9.4
 
-      - name: Configure Git
-        run: |
-          git config user.name "Yuiki Saito"
-          git config user.email "yuikisaito@ysaito.win"
-
       - name: Install plugin
         run: |
           pixi run nu -c "plugin add nu_plugin_query"

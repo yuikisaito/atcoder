@@ -8,6 +8,9 @@ def main [] {
     $from_second = open $FROM_SECOND_STATE
   }
 
+  git config user.name "Yuiki Saito"
+  git config user.email "yuikisaito@ysaito.win"
+
   let subs = http get $"https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=($USER)&from_second=($from_second)"
 
   for $sub in $subs {
@@ -38,7 +41,11 @@ def main [] {
     sleep $SLEEP_SEC
   }
 
+  git config user.name "github-actions[bot]"
+  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
   date now | format date "%s" | save -f $FROM_SECOND_STATE
+  git add $FROM_SECOND_STATE
+  git commit -m $"update ($FROM_SECOND_STATE)"
 
   git push
 }
