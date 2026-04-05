@@ -12,6 +12,7 @@ def main [] {
 
   for $sub in $subs {
     let sub_id = $sub.id
+    let epoch_second = $sub.epoch_second
     let contest_id = $sub.contest_id
     let problem_id = $sub.problem_id
     let lang = $sub.language
@@ -32,7 +33,7 @@ def main [] {
 
     $code | save $code_file
     git add $code_file
-    GIT_AUTHOR_DATE=$sub_id git commit -m $"submit #($sub_id) [($status)]"
+    GIT_AUTHOR_DATE=$epoch_second git commit -m $"submit #($sub_id) [($status)]"
 
     sleep $SLEEP_SEC
   }
