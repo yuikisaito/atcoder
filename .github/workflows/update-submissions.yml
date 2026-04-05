@@ -27,11 +27,11 @@ jobs:
 
       - name: Install plugin
         run: |
-          nu -c 'plugin add nu_plugin_query'
+          pixi run nu -c "plugin add nu_plugin_query"
 
       - name: Use plugin
         run: |
-          nu -c 'plugin use query'
+          pixi run nu -c "plugin use query"
 
       - name: Run update-submissions
         run: pixi run update-submissions
