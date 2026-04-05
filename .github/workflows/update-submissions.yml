@@ -25,5 +25,13 @@ jobs:
           git config user.name "Yuiki Saito"
           git config user.email "yuikisaito@ysaito.win"
 
+      - name: Install plugin
+        run: |
+          nu -c 'plugin add nu_plugin_query'
+
+      - name: Use plugin
+        run: |
+          nu -c 'plugin use query'
+
       - name: Run update-submissions
         run: pixi run update-submissions

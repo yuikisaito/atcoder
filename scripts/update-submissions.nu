@@ -1,6 +1,3 @@
-plugin add nu_plugin_query
-plugin use query
-
 const USER = "yuikisaito"
 const FROM_SECOND_STATE = "last_from_second.txt"
 const SLEEP_SEC = 3sec
