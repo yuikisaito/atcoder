@@ -30,7 +30,7 @@ def main [] {
       continue
     }
 
-    let sub_html = http get $"https://atcoder.jp/contests/($contest_id)/submissions/($sub_id)"
+    let sub_html = http get --headers {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0 Safari/605.1.15"} $"https://atcoder.jp/contests/($contest_id)/submissions/($sub_id)"
     let code = $sub_html | query web --query "#submission-code" | flatten | get 0
     let status = $sub_html | query web --query "#judge-status > span" | flatten | get 0
 
